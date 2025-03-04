@@ -25,7 +25,8 @@ dependencies = [
     "segyio",
     "lz4",
     "pyedflib",
-    "nibabel"
+    "nibabel",
+    "blosc2"
 ]
 
 [tool.scikit-build]
