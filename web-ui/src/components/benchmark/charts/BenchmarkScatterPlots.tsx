@@ -100,8 +100,8 @@ export function BenchmarkScatterPlots({
       <Plot
         data={traces}
         layout={{
-          width: 900,
-          height: 600,
+          width: 1000,
+          height: 670,
           grid: {
             rows: 2,
             columns: 2,
@@ -133,14 +133,14 @@ export function BenchmarkScatterPlots({
           },
           showlegend: true,
           legend: {
-            x: 1,
+            x: 1.08,
             y: 1,
-            xanchor: "right" as const,
+            xanchor: "left" as const,
             yanchor: "top" as const,
           },
           margin: {
             l: 60,
-            r: 20,
+            r: 40,
             t: 20,
             b: 60,
           },
