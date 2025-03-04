@@ -1,4 +1,5 @@
 import Plot from "react-plotly.js";
+import { useState } from "react";
 
 interface ChartData {
   algorithmOrDataset: string;
@@ -14,6 +15,8 @@ interface BenchmarkScatterPlotsProps {
 export function BenchmarkScatterPlots({
   chartData,
 }: BenchmarkScatterPlotsProps) {
+  const [showLabels, setShowLabels] = useState(false);
+
   if (!chartData.length) return null;
 
   const uniqueAlgorithms = Array.from(
@@ -38,12 +41,14 @@ export function BenchmarkScatterPlots({
     const algoData = chartData.filter((d) => d.algorithmOrDataset === algo);
     const baseTrace = {
       name: algo,
-      mode: "markers" as const,
+      mode: showLabels ? ("markers+text" as const) : ("markers" as const),
       marker: {
         color: colors[i % colors.length],
         symbol: markers[Math.floor(i / colors.length) % markers.length],
         size: 10,
       },
+      text: showLabels ? algoData.map(() => algo) : [],
+      textposition: "top center" as const,
       showlegend: true,
       legendgroup: algo,
     };
@@ -81,7 +86,17 @@ export function BenchmarkScatterPlots({
 
   return (
     <div style={{ margin: "20px 0" }}>
-      <h2 style={{ marginBottom: "10px" }}>Performance Relationships</h2>
+      <div style={{ marginBottom: "10px" }}>
+        <h2 style={{ marginBottom: "10px" }}>Performance Relationships</h2>
+        <label style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <input
+            type="checkbox"
+            checked={showLabels}
+            onChange={(e) => setShowLabels(e.target.checked)}
+          />
+          Show point labels
+        </label>
+      </div>
       <Plot
         data={traces}
         layout={{
