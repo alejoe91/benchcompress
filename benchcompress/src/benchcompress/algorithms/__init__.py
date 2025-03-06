@@ -6,6 +6,7 @@ from .lzma import algorithms as lzma_algorithms
 from .brotli import algorithms as brotli_algorithms
 from .lz4 import algorithms as lz4_algorithms
 from .blosc2 import algorithms as blosc2_algorithms
+from .wavpack import algorithms as wavpack_algorithms
 
 algorithms = (
     bzip2_algorithms
@@ -16,4 +17,5 @@ algorithms = (
     + brotli_algorithms
     + lz4_algorithms
     + blosc2_algorithms
+    + wavpack_algorithms
 )
