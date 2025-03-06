@@ -26,7 +26,8 @@ dependencies = [
     "lz4",
     "pyedflib",
     "nibabel",
-    "blosc2"
+    "blosc2",
+    "wavpack-numcodecs"
 ]
 
 [tool.scikit-build]
