@@ -25,7 +25,8 @@ dependencies = [
     "segyio",
     "lz4",
     "pyedflib",
-    "nibabel"
+    "nibabel",
+    "wavpack-numcodecs"
 ]
 
 [tool.scikit-build]
