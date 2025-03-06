@@ -26,6 +26,7 @@ dependencies = [
     "lz4",
     "pyedflib",
     "nibabel",
+    "blosc2",
     "wavpack-numcodecs"
 ]
 

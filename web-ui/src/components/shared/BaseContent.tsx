@@ -5,6 +5,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { BenchmarkData } from "../../types";
 import { BenchmarkCharts } from "../benchmark/charts/BenchmarkCharts";
+import { BenchmarkScatterPlots } from "../benchmark/charts/BenchmarkScatterPlots";
 import { BenchmarkTable } from "../benchmark/table/BenchmarkTable";
 import "./ContentStyles.css";
 
@@ -118,6 +119,9 @@ export const BaseContent = ({
               showSortByCompressionRatio={showSortByCompressionRatio}
               showNormalizeByReference={showNormalizeByReference}
             />
+            {filterKey === "dataset" && (
+              <BenchmarkScatterPlots chartData={chartData} />
+            )}
           </div>
           <div className="benchmark-section">
             <BenchmarkTable
