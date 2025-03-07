@@ -28,7 +28,7 @@ def wavpack_decode(x: bytes, dtype: str, shape: tuple) -> np.ndarray:
     from wavpack_numcodecs import WavPack
 
     wv = WavPack()
-    buf = wv.decode(x, dtype=dtype, shape=shape)
+    buf = wv.decode(x)
     y = np.frombuffer(buf, dtype=dtype)
     return y.reshape(shape)
 
