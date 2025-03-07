@@ -21,7 +21,7 @@ def create_bernoulli(*, n_samples: int, p: float, seed: int) -> np.ndarray:
     return x
 
 
-tags = ["bernoulli", "timeseries", "1d", "integer", "discrete", "synthetic", "i.i.d."]
+tags = ["bernoulli", "timeseries", "1d", "integer", "discrete", "synthetic", "i.i.d.", "unsigned"]
 
 datasets = [
     {

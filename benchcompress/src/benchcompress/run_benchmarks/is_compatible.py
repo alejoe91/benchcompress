@@ -35,4 +35,8 @@ def is_compatible(algorithm_tags: List[str], dataset_tags: List[str]) -> bool:
         if "integer" not in dataset_tags:
             return False
 
+    if "signed_only" in algorithm_tags:
+        if "unsigned" in dataset_tags:
+            return False
+
     return True
